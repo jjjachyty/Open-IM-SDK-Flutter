@@ -59,6 +59,8 @@ class ConversationInfo {
 
   /// 是否还在组内，如果退群返回true
   bool? isNotInGroup;
+  //是否在直播
+  bool? isLiving;
 
   ConversationInfo({
     required this.conversationID,
@@ -79,6 +81,7 @@ class ConversationInfo {
     this.isNotInGroup,
     this.ex,
     this.ext,
+    this.isLiving,
   });
 
   ConversationInfo.fromJson(Map<String, dynamic> json)
@@ -107,6 +110,7 @@ class ConversationInfo {
     groupAtType = json['groupAtType'];
     ex = json['ex'];
     ext = json['ext'];
+    isLiving = json['is_living'];
   }
 
   Map<String, dynamic> toJson() {
@@ -130,6 +134,7 @@ class ConversationInfo {
     data['groupAtType'] = this.groupAtType;
     data['ex'] = this.ex;
     data['ext'] = this.ext;
+    data["isLiving"] = this.isLiving;
     return data;
   }
 
