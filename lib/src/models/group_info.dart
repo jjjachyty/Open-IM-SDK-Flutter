@@ -52,6 +52,8 @@ class GroupInfo {
 
   /// 通知发起人
   String? notificationUserID;
+  //是否在直播
+  bool? isLiving;
 
   GroupInfo({
     required this.groupID,
@@ -71,6 +73,7 @@ class GroupInfo {
     this.applyMemberFriend,
     this.notificationUpdateTime,
     this.notificationUserID,
+    this.isLiving,
   });
 
   GroupInfo.fromJson(Map<String, dynamic> json) : groupID = json['groupID'] {
@@ -91,6 +94,7 @@ class GroupInfo {
     applyMemberFriend = json['applyMemberFriend'];
     notificationUpdateTime = json['notificationUpdateTime'];
     notificationUserID = json['notificationUserID'];
+    isLiving = json['isLiving'];
   }
 
   Map<String, dynamic> toJson() {
@@ -112,6 +116,7 @@ class GroupInfo {
     data['applyMemberFriend'] = this.applyMemberFriend;
     data['notificationUpdateTime'] = this.notificationUpdateTime;
     data['notificationUserID'] = this.notificationUserID;
+    data['isLiving'] = this.isLiving;
     return data;
   }
 
