@@ -42,6 +42,9 @@ class Message {
   /// 群ID
   String? groupID;
 
+  /// 直播ID
+  String? liveID;
+
   /// 消息内容
   String? content;
 
@@ -117,6 +120,7 @@ class Message {
     this.sessionType,
     this.sendID,
     this.recvID,
+    this.liveID,
     this.msgFrom,
     this.contentType,
     this.platformID,
@@ -154,6 +158,7 @@ class Message {
     createTime = json['createTime'];
     sendTime = json['sendTime'];
     sendID = json['sendID'];
+    liveID = json['liveID']
     recvID = json['recvID'];
     msgFrom = json['msgFrom'];
     contentType = json['contentType'];
@@ -226,6 +231,7 @@ class Message {
     data['groupID'] = this.groupID;
     data['content'] = this.content;
     data['seq'] = this.seq;
+    data['liveID'] = this.liveID;
     data['isRead'] = this.isRead;
     data['hasReadTime'] = this.hasReadTime;
     data['status'] = this.status;
@@ -282,6 +288,7 @@ class Message {
     offlinePush = message.offlinePush;
     attachedInfo = message.attachedInfo;
     ex = message.ex;
+    liveID = message.liveID;
     ext = message.ext;
     sessionType = message.sessionType;
     pictureElem = message.pictureElem;
@@ -300,7 +307,7 @@ class Message {
 
   /// 单聊消息
   bool get isSingleChat => sessionType == ConversationType.single;
-
+  bool get isLiveChat => sessionType == ConversationType.live;
   /// 群聊消息
   bool get isGroupChat =>
       sessionType == ConversationType.group ||

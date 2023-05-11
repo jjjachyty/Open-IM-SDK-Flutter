@@ -35,7 +35,7 @@ class MessageManager {
   /// [offlinePushInfo] 离线消息显示内容
   Future<Message> sendMessage({
     required Message message,
-    required OfflinePushInfo offlinePushInfo,
+    OfflinePushInfo? offlinePushInfo,
     String? userID,
     String? groupID,
     String? operationID,
@@ -45,7 +45,7 @@ class MessageManager {
               'sendMessage',
               _buildParam({
                 'message': message.toJson(),
-                'offlinePushInfo': offlinePushInfo.toJson(),
+                'offlinePushInfo': offlinePushInfo?.toJson() ?? "{}",
                 'userID': userID ?? '',
                 'groupID': groupID ?? '',
                 'operationID': Utils.checkOperationID(operationID),

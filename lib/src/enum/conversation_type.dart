@@ -11,4 +11,7 @@ class ConversationType {
 
   /// 通知
   static const notification = 4;
+
+  /// 直播
+  static const live = 5;
 }
