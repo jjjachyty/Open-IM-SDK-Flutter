@@ -68,6 +68,8 @@ class UserInfo {
   /// 禁止登录
   int? forbidden;
 
+  int? leftDuration;
+
   UserInfo({
     this.publicInfo,
     this.friendInfo,
@@ -91,6 +93,7 @@ class UserInfo {
     this.allowBeep,
     this.allowVibration,
     this.forbidden,
+    this.leftDuration,
   });
 
   // UserInfo.self(Map<String, dynamic> json) {
@@ -135,6 +138,7 @@ class UserInfo {
     allowBeep = json['allowBeep'];
     allowVibration = json['allowVibration'];
     forbidden = json['forbidden'];
+    leftDuration = json['leftDuration'];
   }
 
   Map<String, dynamic> toJson() {
@@ -161,6 +165,7 @@ class UserInfo {
     data['allowBeep'] = this.allowBeep;
     data['allowVibration'] = this.allowVibration;
     data['forbidden'] = this.forbidden;
+    data['leftDuration'] = this.leftDuration;
     return data;
   }
 

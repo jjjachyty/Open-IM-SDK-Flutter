@@ -158,7 +158,7 @@ class Message {
     createTime = json['createTime'];
     sendTime = json['sendTime'];
     sendID = json['sendID'];
-    liveID = json['liveID']
+    liveID = json['liveID'];
     recvID = json['recvID'];
     msgFrom = json['msgFrom'];
     contentType = json['contentType'];
@@ -308,6 +308,7 @@ class Message {
   /// 单聊消息
   bool get isSingleChat => sessionType == ConversationType.single;
   bool get isLiveChat => sessionType == ConversationType.live;
+
   /// 群聊消息
   bool get isGroupChat =>
       sessionType == ConversationType.group ||
