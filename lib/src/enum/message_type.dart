@@ -64,8 +64,15 @@ class MessageType {
   //直播消息
   static const LivingMsg = 123;
 
+  //直播消息
+  static const LivingMsg = 123;
+
   /// 通知类型
   static const notificationBegin = 1000;
+  //开始直播消息
+  static const StartLivingNotification = 1001;
+  //关闭直播消息
+  static const CloseLivingNotification = 1002;
 
   static const friendNotificationBegin = 1200;
 
