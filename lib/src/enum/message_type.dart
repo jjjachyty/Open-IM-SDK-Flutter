@@ -57,6 +57,12 @@ class MessageType {
   static const customMsgNotTriggerConversation = 119;
 
   static const customMsgOnlineOnly = 120;
+  //开始直播消息
+  static const startLiving = 121;
+  //关闭直播消息
+  static const closeLiving = 122;
+  //直播消息
+  static const LivingMsg = 123;
 
   /// 通知类型
   static const notificationBegin = 1000;

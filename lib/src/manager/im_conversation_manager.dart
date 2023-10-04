@@ -298,4 +298,18 @@ class ConversationManager {
     param["ManagerName"] = "conversationManager";
     return param;
   }
+
+  /// 标记群聊消息已读
+  /// [groupID] 群id
+  /// [messageIDList] 消息clientMsgID集合
+  Future markGroupMessageHasRead({
+    required String groupID,
+    String? operationID,
+  }) =>
+      _channel.invokeMethod(
+          'markGroupMessageHasRead',
+          _buildParam({
+            "groupID": groupID,
+            "operationID": Utils.checkOperationID(operationID),
+          }));
 }

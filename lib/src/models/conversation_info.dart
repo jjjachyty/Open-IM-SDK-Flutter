@@ -110,7 +110,7 @@ class ConversationInfo {
     groupAtType = json['groupAtType'];
     ex = json['ex'];
     ext = json['ext'];
-    isLiving = json['is_living'];
+    isLiving = json['isLiving'];
   }
 
   Map<String, dynamic> toJson() {
